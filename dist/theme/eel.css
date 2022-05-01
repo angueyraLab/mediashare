@@ -1,0 +1,616 @@
+/**
+ * Black theme for reveal.js.
+ *
+ * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ */
+@import url(https://fonts.googleapis.com/css?family=Montserrat:700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic);
+section.has-light-background, section.has-light-background h1, section.has-light-background h2, section.has-light-background h3, section.has-light-background h4, section.has-light-background h5, section.has-light-background h6 {
+  color: #222;
+}
+
+/*********************************************
+ * GLOBAL STYLES
+ *********************************************/
+:root {
+  --r-background-color: #000;
+  --r-main-font: Open Sans, sans-serif;
+  --r-main-font-size: 40px;
+  --r-main-color: #eee;
+  --r-block-margin: 20px;
+  --r-heading-margin: 0 0 20px 0;
+  --r-heading-font: Montserrat, Impact, sans-serif;
+  --r-heading-color: #eee;
+  --r-heading-line-height: 1.2;
+  --r-heading-letter-spacing: -0.03em;
+  --r-heading-text-transform: none;
+  --r-heading-text-shadow: none;
+  --r-heading-font-weight: normal;
+  --r-heading1-text-shadow: none;
+  --r-heading1-size: 3.77em;
+  --r-heading2-size: 2.11em;
+  --r-heading3-size: 1.55em;
+  --r-heading4-size: 1em;
+  --r-code-font: monospace;
+  --r-link-color: #e7ad52;
+  --r-link-color-dark: #d08a1d;
+  --r-link-color-hover: #f3d7ac;
+  --r-selection-background-color: #e7ad52;
+  --r-selection-color: #fff;
+}
+
+.reveal-viewport {
+  background: #000;
+  background-color: var(--r-background-color);
+}
+
+.reveal {
+  font-family: var(--r-main-font);
+  font-size: var(--r-main-font-size);
+  font-weight: normal;
+  color: var(--r-main-color);
+}
+
+.reveal ::selection {
+  color: var(--r-selection-color);
+  background: var(--r-selection-background-color);
+  text-shadow: none;
+}
+
+.reveal ::-moz-selection {
+  color: var(--r-selection-color);
+  background: var(--r-selection-background-color);
+  text-shadow: none;
+}
+
+.reveal .slides section,
+.reveal .slides section > section {
+  line-height: 1.3;
+  font-weight: inherit;
+}
+
+/*********************************************
+ * HEADERS
+ *********************************************/
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  margin: var(--r-heading-margin);
+  color: var(--r-heading-color);
+  font-family: var(--r-heading-font);
+  font-weight: var(--r-heading-font-weight);
+  line-height: var(--r-heading-line-height);
+  letter-spacing: var(--r-heading-letter-spacing);
+  text-transform: var(--r-heading-text-transform);
+  text-shadow: var(--r-heading-text-shadow);
+  word-wrap: break-word;
+}
+
+.reveal h1 {
+  font-size: var(--r-heading1-size);
+}
+
+.reveal h2 {
+  font-size: var(--r-heading2-size);
+}
+
+.reveal h3 {
+  font-size: var(--r-heading3-size);
+}
+
+.reveal h4 {
+  font-size: var(--r-heading4-size);
+}
+
+.reveal h1 {
+  text-shadow: var(--r-heading1-text-shadow);
+}
+
+/*********************************************
+ * OTHER
+ *********************************************/
+.reveal p {
+  margin: var(--r-block-margin) 0;
+  line-height: 1.3;
+}
+
+/* Remove trailing margins after titles */
+.reveal h1:last-child,
+.reveal h2:last-child,
+.reveal h3:last-child,
+.reveal h4:last-child,
+.reveal h5:last-child,
+.reveal h6:last-child {
+  margin-bottom: 0;
+}
+
+/* Ensure certain elements are never larger than the slide itself */
+.reveal img,
+.reveal video,
+.reveal iframe {
+  max-width: 95%;
+  max-height: 95%;
+}
+
+.reveal strong,
+.reveal b {
+  font-weight: bold;
+}
+
+.reveal em {
+  font-style: italic;
+}
+
+.reveal ol,
+.reveal dl,
+.reveal ul {
+  display: inline-block;
+  text-align: left;
+  margin: 0 0 0 1em;
+}
+
+.reveal ol {
+  list-style-type: decimal;
+}
+
+.reveal ul {
+  list-style-type: disc;
+}
+
+.reveal ul ul {
+  list-style-type: square;
+}
+
+.reveal ul ul ul {
+  list-style-type: circle;
+}
+
+.reveal ul ul,
+.reveal ul ol,
+.reveal ol ol,
+.reveal ol ul {
+  display: block;
+  margin-left: 40px;
+}
+
+.reveal dt {
+  font-weight: bold;
+}
+
+.reveal dd {
+  margin-left: 40px;
+}
+
+.reveal blockquote {
+  display: block;
+  position: relative;
+  width: 70%;
+  margin: var(--r-block-margin) auto;
+  padding: 5px;
+  font-style: italic;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+}
+
+.reveal blockquote p:first-child,
+.reveal blockquote p:last-child {
+  display: inline-block;
+}
+
+.reveal q {
+  font-style: italic;
+}
+
+.reveal pre {
+  display: block;
+  position: relative;
+  width: 90%;
+  margin: var(--r-block-margin) auto;
+  text-align: left;
+  font-size: 0.55em;
+  font-family: var(--r-code-font);
+  line-height: 1.2em;
+  word-wrap: break-word;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.reveal code {
+  font-family: var(--r-code-font);
+  text-transform: none;
+  tab-size: 2;
+}
+
+.reveal pre code {
+  display: block;
+  padding: 5px;
+  overflow: auto;
+  max-height: 400px;
+  word-wrap: normal;
+}
+
+.reveal .code-wrapper {
+  white-space: normal;
+}
+
+.reveal .code-wrapper code {
+  white-space: pre;
+}
+
+.reveal table {
+  margin: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.reveal table th {
+  font-weight: bold;
+}
+
+.reveal table th,
+.reveal table td {
+  text-align: left;
+  padding: 0.2em 0.5em 0.2em 0.5em;
+  border-bottom: 1px solid;
+}
+
+.reveal table th[align=center],
+.reveal table td[align=center] {
+  text-align: center;
+}
+
+.reveal table th[align=right],
+.reveal table td[align=right] {
+  text-align: right;
+}
+
+.reveal table tbody tr:last-child th,
+.reveal table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.reveal sup {
+  vertical-align: super;
+  font-size: smaller;
+}
+
+.reveal sub {
+  vertical-align: sub;
+  font-size: smaller;
+}
+
+.reveal small {
+  display: inline-block;
+  font-size: 0.6em;
+  line-height: 1.2em;
+  vertical-align: top;
+}
+
+.reveal small * {
+  vertical-align: top;
+}
+
+.reveal img {
+  margin: var(--r-block-margin) 0;
+}
+
+/*********************************************
+ * LINKS
+ *********************************************/
+.reveal a {
+  color: var(--r-link-color);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.reveal a:hover {
+  color: var(--r-link-color-hover);
+  text-shadow: none;
+  border: none;
+}
+
+.reveal .roll span:after {
+  color: #fff;
+  background: var(--r-link-color-dark);
+}
+
+/*********************************************
+ * Frame helper
+ *********************************************/
+.reveal .r-frame {
+  border: 4px solid var(--r-main-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.reveal a .r-frame {
+  transition: all 0.15s linear;
+}
+
+.reveal a:hover .r-frame {
+  border-color: var(--r-link-color);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
+}
+
+/*********************************************
+ * NAVIGATION CONTROLS
+ *********************************************/
+.reveal .controls {
+  color: var(--r-link-color);
+}
+
+/*********************************************
+ * PROGRESS BAR
+ *********************************************/
+.reveal .progress {
+  background: rgba(0, 0, 0, 0.2);
+  color: var(--r-link-color);
+}
+
+/*********************************************
+ * PRINT BACKGROUND
+ *********************************************/
+@media print {
+  .backgrounds {
+    background-color: var(--r-background-color);
+  }
+}
+
+
+div.lims {
+   position:absolute;
+   top:0px;left:0px;
+   width:1920px;height:1080px;
+   color:rgb(125,125,125);
+   border-style: solid;
+   border-width: 4px;
+}
+li {margin-bottom: 20px !important;}
+sup {
+   line-height: 0;
+   font-size: 60% !important;
+   vertical-align: bottom;
+   mso-text-raise:60%;
+}
+
+h1.bluetitle {
+   color: rgb(0, 170, 213);
+   text-align:center;
+   font-weight:900;
+   width: 1900px; left: 10px; top: 5px; height: auto;
+   font-size:1.8em;
+   margin-top:30px;
+   margin-left:30px;
+}
+h1.bluetitleL {
+   color: rgb(0, 170, 213);
+   text-align:left;
+   font-weight:900;
+   width: 1850px; left: 50px; top: 5px; height: auto;
+   font-size:1.8em;
+   margin-top:30px;
+   margin-left:50px;
+}
+h1.bluetitleR {
+   color: rgb(0, 170, 213);
+   text-align:right;
+   font-weight:900;
+   width: 1850px; left: 10px; top: 5px; height: auto;
+   font-size:1.8em;
+   margin-top:30px;
+   margin-left:0px;
+}
+h1.bluetitleRD {
+   color: rgb(0, 170, 213);
+   text-align:right;
+   font-weight:900;
+   width: 1850px; left: 10px; top: 5px; height: auto;
+   font-size:1.8em;
+   margin-top:42%;
+   margin-left:0px;
+}
+h1.bluetitleBIG {
+   color: rgb(0, 170, 213);
+   text-align:center;
+   font-weight:1800;
+   width: 1900px; left: 10px; top: 5px; height: auto;
+   font-size:3.6em;
+   margin-top:30px;
+   margin-left:30px;
+}
+h1.whitetitle {
+   color: white;
+   text-align:left;
+   font-weight:900;
+   width: 1900px; left: 10px; top: 5px; height: auto;
+   font-size:1.8em;
+   margin-top:30px;
+   margin-left:30px;
+}
+h1.whitetitleR {
+   color: white;
+   text-align:right;
+   font-weight:900;
+   width: 1900px; right: 50px; top: 5px; height: auto;
+   font-size:1.3em;
+   margin-top:30px;
+   margin-right:50px;
+}
+h1.warning {
+   color: rgb(237,152,59);
+   text-align:right;
+   font-weight:1500;
+   width: 1400px; left: 10px; top: 500px; height: auto;
+   font-size:2.5em;
+   margin-top:0px;
+   z-index:0;
+}
+h1.reminder {
+   color: rgb(237,59,59);
+   position:absolute;
+   text-align:center;
+   font-weight:1500;
+   width: 1920px; left: 0px; top: 500px; height: auto;
+   font-size:2.5em;
+   margin-top:000px;
+   z-index:1000;
+}
+h1.endtitle {
+   color: rgb(0, 170, 213);
+   text-align:right;
+   font-weight:1500;
+   width: 1900px; left: 10px; top: 700px; height: auto;
+   font-size:1.8em;
+   margin-top:100px;
+   margin-bottom:30px;
+}
+h1.endtitlered {
+   color: rgb(255, 194, 158);
+   text-align:right;
+   font-weight:1500;
+   width: 1850px; left: 10px; top: 700px; height: auto;
+   font-size:1.8em;
+   margin-top:100px;
+   margin-right:100px;
+   margin-bottom:30px;
+}
+h1.endtitleredL {
+   color: rgb(255, 194, 158);
+   text-align:left;
+   font-weight:1500;
+   width: 1750px; left: 250px; top: 700px; height: auto;
+   font-size:1.3em;
+   margin-top:100px;
+   margin-left:200px;
+   margin-bottom:30px;
+}
+
+p.citation {
+   text-align:right;
+   font-size:100%;
+   margin-right:5%;
+   margin-top:0%;
+   color:rgb(150,150,150);
+}
+p.citationL {
+   text-align:left;
+   font-size:100%;
+   margin-right:0%;
+   margin-top:0%;
+   color:rgb(150,150,150);
+}
+.sturdy td:nth-child(1) {
+  width: 58%;
+  text-align:right;
+}
+.sturdy td:nth-child(2) {
+  width: 32%;
+  text-align:left;
+}
+.sturdy td:nth-child(3) {
+  width: 10%;
+  text-align:center;
+}
+
+mark.r {color: #747474;background: #000000;}
+.u {color: #B540B7;background: #000000;}
+.s {color: #4669F2;background: #000000;}
+.m {color: #04CD22;background: #000000;}
+.l {color: #CC2C2A;background: #000000;}
+.k {color: #000000;background: #000000;}
+.w {color: #ffffff;background: #000000;}
+.magenta {color: #ff00ff;background: #000000;}
+.orange {color: #ffa500;background: #000000;}
+.cyan {color: #00ffff;background: #000000;}
+
+div.slblock-content.box {
+   font-size: 145%;
+   text-align: left;
+   background-color: black;
+   border-style: solid;
+   border-width: 4px;
+   border-radius: 20px;
+   padding: 25px;
+}
+
+div.slblock-content.boxgrey {
+   font-size: 145%;
+   text-align: left;
+   color:rgb(125,125,125);
+   background-color: black;
+   border-style: solid;
+   border-width: 4px;
+   border-radius: 20px;
+   padding: 25px;
+}
+
+div.slblock-content.boxred {
+   font-size: 145%;
+   text-align: center;
+   background-color: rgb(150, 34, 38);
+   border-style: solid;
+   border-width: 0px;
+   border-radius: 20px;
+   padding: 25px;
+}
+
+div.slblock-content.boxblack {
+   font-size: 145%;
+   text-align: center;
+   background-color: rgb(0,0,0);
+   border-style: solid;
+   border-width: 0px;
+   border-radius: 20px;
+   padding: 25px;
+}
+
+div.slblock-content.boxblue {
+   font-size: 145%;
+   text-align: center;
+   background-color: black;
+   border-style: solid;
+   border-width: 4px;
+   border-radius: 20px;
+   border-color:rgb(80, 80, 180);
+   padding: 25px;
+}
+
+p.blue{color:rgb(80, 80, 180);}
+
+img.fader:hover {
+/*			    -webkit-transform: scaleX(-1);*/
+/*			    transform: scaleX(-1);*/
+   opacity:0;
+}
+img.overlay{
+   position:absolute;
+}
+
+div.polaroid {
+   width: 50%;
+   background-color: rgb(8,8,8);
+   box-shadow: 0px 16px 32px 1px rgba(200, 200, 200, 0.2), 1px 24px 80px 1px rgba(200, 200, 200, 0.19);
+}
+
+div.containerpol {
+  text-align: center;
+  padding: 10px 20px;
+}
+
+@keyframes strike {
+  from { text-decoration-color: transparent; }
+  to { text-decoration-color: auto; }
+}
+.strike {
+  text-decoration: line-through;
+  animation: strike 1s linear;
+}
+
+@keyframes redtoblue {
+  from { color: rgb(255,0,0); }
+  to { color: auto; }
+}
+.redtoblue {
+  animation: redtoblue 6s linear;
+}
